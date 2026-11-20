@@ -9,11 +9,11 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="Grupo VIP · Bazar da Cleide">
 <meta property="og:description" content="Lotes de moldes de confeitaria com preço de desapego. Quem está no grupo vê primeiro.">
-<meta property="og:image" content="img/perfil.webp">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/rkffilho-dev/bazar-da-cleide@abb714e/img/perfil.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="img/hero-seda.webp">
+<link rel="preload" as="image" href="https://cdn.jsdelivr.net/gh/rkffilho-dev/bazar-da-cleide@abb714e/img/hero-seda.webp">
 
 <script>
   /* ================= CONFIGURAÇÃO ================= */
@@ -54,7 +54,7 @@ em.accent{font-style:italic;color:var(--rose);font-weight:600}
 
 /* ---------- HERO ---------- */
 .hero{position:relative;min-height:100svh;display:flex;align-items:center;text-align:center;overflow:hidden;isolation:isolate}
-.hero-bg{position:absolute;inset:-6%;z-index:-2;background:url(img/hero-seda.webp) center/cover no-repeat;transform:scale(1.04);animation:drift 18s ease-in-out infinite alternate}
+.hero-bg{position:absolute;inset:-6%;z-index:-2;background:url(https://cdn.jsdelivr.net/gh/rkffilho-dev/bazar-da-cleide@abb714e/img/hero-seda.webp) center/cover no-repeat;transform:scale(1.04);animation:drift 18s ease-in-out infinite alternate}
 .hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(247,241,234,.25) 0%,rgba(247,241,234,.55) 45%,rgba(247,241,234,.92) 85%,var(--cream) 100%)}
 @keyframes drift{to{transform:scale(1.1) translate3d(-1.5%,1%,0)}}
 .hero{width:100%;min-height:100vh;min-height:100svh;margin:0;border-radius:0}
@@ -164,6 +164,24 @@ footer p{margin-top:10px;font-size:13px}
 /* animação de entrada */
 .reveal{opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s ease}
 .reveal.in{opacity:1;transform:none}
+
+/* ---------- EVENTO 26/11 ---------- */
+.seal{width:150px;height:150px;margin-bottom:16px}
+.event{display:block;margin:18px auto 0;max-width:400px;text-decoration:none;color:var(--ink);background:rgba(253,248,243,.92);border:1px solid rgba(200,161,101,.55);border-radius:20px;padding:14px 16px 13px;box-shadow:0 16px 30px -22px rgba(58,36,24,.55);backdrop-filter:blur(6px)}
+.event .when{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#fff;background:var(--choc);border-radius:999px;padding:5px 12px}
+.event .two{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px;text-align:center}
+.event .two div{border-radius:14px;background:var(--cream);padding:9px 6px}
+.event b{display:block;font-family:"Cormorant Garamond",serif;font-size:19px;line-height:1.1;font-weight:700}
+.event small{display:block;font-size:11.5px;color:var(--ink-soft);line-height:1.35;margin-top:3px}
+.event .where{font-size:12px;color:var(--ink-soft);margin-top:9px}
+.event .where u{color:#a0675a;font-weight:700;text-decoration:none}
+.aula{background:var(--paper)}
+.aula .banner{width:100%;max-width:440px;margin:24px auto 0;border-radius:22px;box-shadow:0 22px 40px -26px rgba(58,36,24,.6)}
+.facts{list-style:none;margin:22px auto 0;max-width:420px;text-align:left;display:grid;gap:10px}
+.facts li{display:flex;gap:12px;align-items:flex-start;background:var(--cream);border:1px solid var(--line);border-radius:16px;padding:12px 14px;font-size:15px;line-height:1.4}
+.facts li span{font-size:20px;line-height:1.2}
+.facts li b{color:var(--ink)}
+.aula .btn{margin-top:24px}
 @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.hero-bg,.btn.pulse{animation:none}}
 
 @media (min-width:760px){
@@ -181,17 +199,47 @@ footer p{margin-top:10px;font-size:13px}
 <header class="hero">
   <div class="hero-bg" aria-hidden="true"></div>
   <div class="wrap">
-    <img class="seal reveal" src="img/selo.webp" width="600" height="600" alt="Bazar da Cleide · Grupo VIP" fetchpriority="high">
+    <img class="seal reveal" src="https://cdn.jsdelivr.net/gh/rkffilho-dev/bazar-da-cleide@abb714e/img/selo.webp" width="600" height="600" alt="Bazar da Cleide · Grupo VIP" fetchpriority="high">
     <span class="pill reveal"><i>✦</i> Acesso exclusivo <i>✦</i></span><br>
     <a class="btn pulse js-join reveal" id="heroBtn" href="#">
       <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91A9.85 9.85 0 0 0 12.04 2Zm5.8 14.04c-.24.68-1.42 1.3-1.95 1.35-.5.05-.97.23-3.27-.68-2.77-1.09-4.52-3.92-4.66-4.1-.13-.18-1.11-1.48-1.11-2.82 0-1.34.7-2 .95-2.27.24-.27.53-.34.71-.34h.51c.16 0 .38-.06.6.46.23.54.77 1.87.84 2 .07.14.11.3.02.48-.09.18-.14.3-.27.45-.14.16-.29.36-.41.48-.14.14-.28.29-.12.56.16.27.71 1.17 1.52 1.9 1.05.93 1.93 1.22 2.2 1.36.27.14.43.11.59-.07.16-.18.68-.79.86-1.06.18-.27.36-.23.61-.14.25.09 1.58.75 1.85.88.27.14.45.2.52.32.07.11.07.66-.17 1.33Z"/></svg>
       Quero entrar no Grupo VIP
     </a>
     <h1 class="reveal">Entre para o Grupo VIP do <em class="accent">Bazar da Cleide</em> e garanta os lotes antes de todo mundo</h1>
-    <p class="sub reveal">Tô desapegando dos moldes, cortadores, utensílios e materiais de confeitaria do meu ateliê. Lotes de moldes <b>por menos de R$ 6 cada</b>. Quem está no grupo vê primeiro.</p>
+    <p class="sub reveal">Tô desapegando dos moldes, cortadores e materiais do meu ateliê, com lotes de moldes <b>por menos de R$ 6 cada</b>. E no grupo eu também passo tudo do <b>bazar presencial</b> e da minha <b>Aula Show de Ganache</b>.</p>
+    <a class="event reveal" href="#aula">
+      <span class="when">Quinta · 26/11 · 10h · Barra</span>
+      <div class="two">
+        <div><b>Aula Show Ganache</b><small>cobertura para bolos artísticos, com degustação</small></div>
+        <div><b>Bazar presencial</b><small>materiais de confeitaria no mesmo dia</small></div>
+      </div>
+      <p class="where">Kathy Macedo Confeitaria · Centro Metropolitano · <u>ver detalhes ↓</u></p>
+    </a>
     <a class="down reveal" href="#lotes">↓ VEJA O QUE TEM NO BAZAR ↓<small>FOTOS DAS PEÇAS DE VERDADE</small></a>
   </div>
 </header>
+
+<section id="aula" class="center aula">
+  <div class="wrap">
+    <span class="pill reveal"><i>✦</i> Presencial · 26/11 <i>✦</i></span>
+    <h2 class="reveal">Aula Show de <em class="accent">Ganache</em> + bazar de confeitaria</h2>
+    <p class="lede reveal">Vou ensinar ao vivo como eu faço a cobertura de ganache dos meus bolos artísticos. E no mesmo dia vai ter o bazar presencial, pra você ver e levar as peças na hora.</p>
+    <img class="banner reveal" src="https://cdn.jsdelivr.net/gh/rkffilho-dev/bazar-da-cleide@bf6a5ad/img/aula-ganache.webp" width="1000" height="1000" alt="Aula Show Ganache com a confeiteira Cleide, quinta 26/11 às 10h" loading="lazy">
+    <ul class="facts reveal">
+      <li><span>📅</span><div><b>Quinta, 26/11, às 10h</b></div></li>
+      <li><span>📍</span><div><b>Kathy Macedo Confeitaria</b><br>Centro Metropolitano, Barra · Av. Ator José Wilker, 600, Bloco 1, Loja K</div></li>
+      <li><span>🍫</span><div><b>Investimento: R$ 69,00</b><br>técnicas de cobertura, texturas, aplicações e acabamento, com degustação inclusa</div></li>
+      <li><span>🛍️</span><div><b>Bazar de confeitaria presencial</b><br>moldes, cortadores e utensílios do meu ateliê no mesmo dia</div></li>
+    </ul>
+    <p class="lede reveal" style="margin-top:18px">As vagas da aula e as novidades do bazar eu aviso primeiro no grupo.</p>
+    <a class="btn js-join reveal" href="#">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91A9.85 9.85 0 0 0 12.04 2Zm5.8 14.04c-.24.68-1.42 1.3-1.95 1.35-.5.05-.97.23-3.27-.68-2.77-1.09-4.52-3.92-4.66-4.1-.13-.18-1.11-1.48-1.11-2.82 0-1.34.7-2 .95-2.27.24-.27.53-.34.71-.34h.51c.16 0 .38-.06.6.46.23.54.77 1.87.84 2 .07.14.11.3.02.48-.09.18-.14.3-.27.45-.14.16-.29.36-.41.48-.14.14-.28.29-.12.56.16.27.71 1.17 1.52 1.9 1.05.93 1.93 1.22 2.2 1.36.27.14.43.11.59-.07.16-.18.68-.79.86-1.06.18-.27.36-.23.61-.14.25.09 1.58.75 1.85.88.27.14.45.2.52.32.07.11.07.66-.17 1.33Z"/></svg>
+      Entrar no grupo e saber mais
+    </a>
+  </div>
+</section>
+
+<div class="rule"></div>
 
 <section id="lotes" class="center">
   <div class="wrap">
@@ -214,11 +262,11 @@ footer p{margin-top:10px;font-size:13px}
     <h2 class="reveal">Outros desapegos do <em class="accent">ateliê</em></h2>
     <p class="lede reveal">Cortadores, marcadores e utensílios. Tudo usado, em bom estado.</p>
     <div class="grid">
-      <article class="item wide reveal"><img src="img/item-cafe.webp" width="432" height="540" alt="Kit café coado 5 litros com chaleira, suporte e coador" loading="lazy"><div><h3>Kit café coado 5 litros</h3><p style="display:block">Chaleira + suporte + coador. Ideal pra festa, igreja e evento.</p><p><span>Peça única</span><b>R$ 150</b></p></div></article>
-      <article class="item reveal"><img src="img/item-alfabeto-inox.webp" width="432" height="540" alt="Alfabeto colonial de cortadores em inox" loading="lazy"><div><h3>Alfabeto colonial em inox</h3><p><span>Não enferruja</span><b>R$ 90</b></p></div></article>
-      <article class="item reveal"><img src="img/item-cortadores-letras-numeros.webp" width="432" height="540" alt="Kit de cortadores de letras e números" loading="lazy"><div><h3>Cortadores de letras e números</h3><p><span>Kit completo</span><b>R$ 15</b></p></div></article>
-      <article class="item reveal"><img src="img/item-alfabeto-tematico.webp" width="432" height="540" alt="Cortadores de plástico do alfabeto de A a Z" loading="lazy"><div><h3>Alfabeto de A a Z temático</h3><p><span>Cortadores</span><b>R$ 10</b></p></div></article>
-      <article class="item reveal"><img src="img/item-marcadores-textura.webp" width="432" height="540" alt="Marcadores de textura para pasta americana e biscuit" loading="lazy"><div><h3>Marcadores de textura</h3><p><span>Pasta e biscuit</span><b>R$ 7 cada</b></p></div></article>
+      <article class="item wide reveal"><img src="https://cdn.jsdelivr.net/gh/rkffilho-dev/bazar-da-cleide@abb714e/img/item-cafe.webp" width="432" height="540" alt="Kit café coado 5 litros com chaleira, suporte e coador" loading="lazy"><div><h3>Kit café coado 5 litros</h3><p style="display:block">Chaleira + suporte + coador. Ideal pra festa, igreja e evento.</p><p><span>Peça única</span><b>R$ 150</b></p></div></article>
+      <article class="item reveal"><img src="https://cdn.jsdelivr.net/gh/rkffilho-dev/bazar-da-cleide@abb714e/img/item-alfabeto-inox.webp" width="432" height="540" alt="Alfabeto colonial de cortadores em inox" loading="lazy"><div><h3>Alfabeto colonial em inox</h3><p><span>Não enferruja</span><b>R$ 90</b></p></div></article>
+      <article class="item reveal"><img src="https://cdn.jsdelivr.net/gh/rkffilho-dev/bazar-da-cleide@abb714e/img/item-cortadores-letras-numeros.webp" width="432" height="540" alt="Kit de cortadores de letras e números" loading="lazy"><div><h3>Cortadores de letras e números</h3><p><span>Kit completo</span><b>R$ 15</b></p></div></article>
+      <article class="item reveal"><img src="https://cdn.jsdelivr.net/gh/rkffilho-dev/bazar-da-cleide@abb714e/img/item-alfabeto-tematico.webp" width="432" height="540" alt="Cortadores de plástico do alfabeto de A a Z" loading="lazy"><div><h3>Alfabeto de A a Z temático</h3><p><span>Cortadores</span><b>R$ 10</b></p></div></article>
+      <article class="item reveal"><img src="https://cdn.jsdelivr.net/gh/rkffilho-dev/bazar-da-cleide@abb714e/img/item-marcadores-textura.webp" width="432" height="540" alt="Marcadores de textura para pasta americana e biscuit" loading="lazy"><div><h3>Marcadores de textura</h3><p><span>Pasta e biscuit</span><b>R$ 7 cada</b></p></div></article>
     </div>
     <p class="more reveal">Toda semana entra coisa nova. Quem está no grupo vê primeiro.</p>
   </div>
@@ -297,9 +345,9 @@ footer p{margin-top:10px;font-size:13px}
   LOTES.forEach(function(l,i){
     var n = i+1;
     html += '<article class="phone"><div class="screen">'+
-      '<div class="wa-top"><img class="wa-ava" src="img/perfil.webp" width="32" height="32" alt="" loading="lazy"><div><b>Bazar da Cleide 🩷 Desapego</b><small>Cleide, você e outros</small></div></div>'+
+      '<div class="wa-top"><img class="wa-ava" src="https://cdn.jsdelivr.net/gh/rkffilho-dev/bazar-da-cleide@abb714e/img/perfil.webp" width="32" height="32" alt="" loading="lazy"><div><b>Bazar da Cleide 🩷 Desapego</b><small>Cleide, você e outros</small></div></div>'+
       '<div class="wa-body"><div class="bubble"><div class="who">Cleide Fouz</div>'+
-      '<img src="img/lote'+n+'.webp" width="560" height="700" alt="Foto real do lote '+n+'"'+(n>1?' loading="lazy"':'')+'>'+
+      '<img src="https://cdn.jsdelivr.net/gh/rkffilho-dev/bazar-da-cleide@abb714e/img/lote'+n+'.webp" width="560" height="700" alt="Foto real do lote '+n+'"'+(n>1?' loading="lazy"':'')+'>'+
       '<p>Lote '+n+': '+l[0]+' · <strong>'+l[1]+' o lote</strong></p><time>'+horas[i]+'</time></div></div>'+
       '</div><div class="phone-foot"><span>Lote '+n+'</span><span>Peça única</span></div></article>';
   });
