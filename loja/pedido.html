@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Seu pedido · Bazar da Cleide</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#f7f1ea">
+<link rel="icon" href="img/selo.webp">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Raleway:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=2">
+<script>
+  var PIXEL_ID = "1441059981471479";
+  if (/^\d{10,20}$/.test(PIXEL_ID)) {
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', PIXEL_ID); fbq('track', 'PageView');
+  }
+</script>
+</head>
+<body>
+<header class="bar"><div class="wrap">
+  <a class="brand" href="./"><span class="mono" aria-hidden="true">C</span><span><b>Bazar da Cleide</b><small>Ateliê Cleide Fouz</small></span></a>
+</div></header>
+<main class="order"><div class="card2" id="box"><p class="lead">Carregando seu pedido…</p></div></main>
+<script>
+(function () {
+  var $ = function (s) { return document.querySelector(s); };
+  var esc = function (s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); };
+  var brl = function (v) { return 'R$ ' + Number(v).toFixed(2).replace('.', ','); };
+  var q = new URLSearchParams(location.search);
+  var id = q.get('id') || q.get('order_nsu') || q.get('external_reference');
+  var novo = q.get('novo') === '1';
+  var extra = ['slug', 'transaction_nsu', 'payment_id'].filter(function (k) { return q.get(k); }).map(function (k) { return '&' + k + '=' + encodeURIComponent(q.get(k)); }).join('');
+  var timer, pixelFeito = false, diff = 0;
+  var wa = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Z"/></svg>';
+
+  function lista(p) {
+    return '<div class="box list"><h5>Pedido ' + esc(p.id) + '</h5>' + p.itens.map(function (i) {
+      return '<div class="tot"><div><span>' + i.qtd + 'x ' + esc(i.nome) + '</span><span>' + brl(i.preco * i.qtd) + '</span></div></div>';
+    }).join('') + '<div class="tot"><div><span>' + esc(p.frete_servico) + '</span><span>' + (p.frete ? brl(p.frete) : 'Grátis') + '</span></div><div class="big"><span>Total</span><span>' + brl(p.total) + '</span></div></div></div>';
+  }
+  function carregar() {
+    if (!id) { $('#box').innerHTML = '<p class="lead">Pedido não encontrado.</p><a class="btn" href="./">Voltar à loja</a>'; return; }
+    fetch('api/status.php?id=' + encodeURIComponent(id) + extra, { cache: 'no-store' }).then(function (r) { return r.json(); }).then(mostrar)
+      .catch(function () { $('#box').innerHTML = '<p class="lead">Não consegui carregar agora. Atualize a página.</p>'; });
+  }
+  function mostrar(p) {
+    if (p.erro) { $('#box').innerHTML = '<p class="lead">' + esc(p.erro) + '</p><a class="btn" href="./">Voltar à loja</a>'; return; }
+    diff = p.agora * 1000 - Date.now();
+    var h = '';
+    if (p.status === 'pago' || p.status === 'enviado') {
+      h = '<div class="ic">🎉</div><h1>Pagamento confirmado!</h1><p class="lead">Obrigada! Já é seu. Vou separar com carinho e te mando o rastreio no WhatsApp.</p>' +
+          (p.status === 'enviado' ? '<p class="lead"><b>Pedido enviado.</b></p>' : '') +
+          '<a class="btn wa" target="_blank" rel="noopener" href="' + esc(p.whatsapp) + '">' + wa + ' Falar com a Cleide</a>';
+      if (!pixelFeito && window.fbq) { pixelFeito = true; try { fbq('track', 'Purchase', { value: p.total, currency: 'BRL' }); } catch (e) {} }
+    } else if (p.status === 'aguardando') {
+      if (p.pagamento === 'whatsapp') {
+        h = '<div class="ic">💬</div><h1>Falta só um passo</h1><p class="lead">Seus itens estão <b>reservados</b>. Toque no botão para mandar o pedido para a Cleide no WhatsApp. Ela te responde com o Pix.</p>' +
+            '<div class="timer" id="timer"></div>' +
+            '<a class="btn wa" target="_blank" rel="noopener" href="' + esc(p.pagamento_url) + '">' + wa + ' Enviar pedido no WhatsApp</a>' +
+            '<p class="hint">Se o Pix não for pago até o fim do tempo, a reserva cai e as peças voltam para a vitrine.</p>';
+      } else {
+        h = '<div class="ic">⏳</div><h1>Aguardando pagamento</h1><p class="lead">Seus itens estão <b>reservados</b> enquanto você paga. Assim que o pagamento cair, esta página muda sozinha.</p>' +
+            '<div class="timer" id="timer"></div>' +
+            '<a class="btn" href="' + esc(p.pagamento_url) + '">Pagar agora com Pix ou cartão</a>' +
+            '<a class="btn ghost" target="_blank" rel="noopener" href="' + esc(p.whatsapp) + '">Precisa de ajuda? Chama no WhatsApp</a>';
+      }
+    } else if (p.status === 'devolver') {
+      h = '<div class="ic">💛</div><h1>Recebemos seu pagamento</h1><p class="lead">Mas a reserva já tinha vencido e a peça foi vendida antes. A Cleide vai falar com você para devolver o valor.</p>' +
+          '<a class="btn wa" target="_blank" rel="noopener" href="' + esc(p.whatsapp) + '">' + wa + ' Falar com a Cleide</a>';
+    } else {
+      h = '<div class="ic">⌛</div><h1>Reserva encerrada</h1><p class="lead">O tempo para pagar acabou e as peças voltaram para a vitrine. Se ainda estiverem lá, é só pedir de novo.</p>' +
+          '<a class="btn" href="./">Voltar à loja</a><a class="btn ghost" target="_blank" rel="noopener" href="' + esc(p.whatsapp) + '">Já paguei, falar com a Cleide</a>';
+    }
+    $('#box').innerHTML = h + lista(p) + '<p class="hint" style="margin-top:14px"><a href="./">‹ Voltar à loja</a></p>';
+    clearInterval(timer);
+    if (p.status === 'aguardando') {
+      var tick = function () {
+        var s = Math.max(0, Math.floor((p.expira_em * 1000 - (Date.now() + diff)) / 1000));
+        var el = $('#timer'); if (el) el.textContent = 'Reservado por ' + (s >= 3600 ? Math.floor(s / 3600) + 'h ' : '') + String(Math.floor(s % 3600 / 60)).padStart(2, '0') + ':' + String(s % 60).padStart(2, '0');
+        if (s === 0) { clearInterval(timer); setTimeout(carregar, 1500); }
+      };
+      tick(); timer = setInterval(tick, 1000);
+      if (p.pagamento !== 'whatsapp') setTimeout(carregar, 8000);
+    }
+  }
+  carregar();
+})();
+</script>
+</body>
+</html>

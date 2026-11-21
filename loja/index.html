@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bazar da Cleide · Loja</title>
+<meta name="description" content="Desapego do ateliê da cake designer Cleide Fouz: lotes de moldes de silicone, cortadores e utensílios de confeitaria. Peças únicas, envio para todo o Brasil.">
+<meta name="theme-color" content="#f7f1ea">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Bazar da Cleide · Loja">
+<meta property="og:description" content="Moldes, cortadores e utensílios de confeitaria do ateliê da Cleide Fouz. Peças únicas, envio para todo o Brasil.">
+<meta property="og:image" content="img/lote1-1.webp">
+<link rel="icon" href="img/selo.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=2">
+<script>
+  /* Pixel da Meta (conjunto "Bazar da Cleide"). Deixe vazio para desligar. */
+  var PIXEL_ID = "1441059981471479";
+  if (/^\d{10,20}$/.test(PIXEL_ID)) {
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', PIXEL_ID); fbq('track', 'PageView');
+  }
+</script>
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap">
+    <a class="brand" href="#topo" aria-label="Bazar da Cleide, início">
+      <span class="mono" aria-hidden="true">C</span>
+      <span><b>Bazar da Cleide</b><small>Ateliê Cleide Fouz</small></span>
+    </a>
+    <button class="cartbtn" id="openCart" aria-label="Abrir carrinho">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l-1 13H7L6 7Z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+      <span class="n" id="cartCount">0</span>
+    </button>
+  </div>
+</header>
+
+<section class="hero" id="topo">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="wrap">
+    <span class="pill"><i>✦</i> Desapego do ateliê <i>✦</i></span>
+    <h1>Materiais de confeitaria da <em>Cleide Fouz</em></h1>
+    <p class="sub">Tô desapegando dos moldes, cortadores e utensílios do meu ateliê. <b>Cada peça é única:</b> pagou, é sua.</p>
+    <div class="perks">
+      <span>📦 Envio p/ todo o Brasil</span>
+      <span>⚡ Pix ou cartão</span>
+      <span>📍 Retirada em Vargem Grande/RJ</span>
+    </div>
+  </div>
+</section>
+
+<main class="wrap" id="vitrine">
+  <nav class="filters" id="filters" aria-label="Categorias"></nav>
+  <p class="count" id="count"></p>
+  <div class="grid" id="grid"></div>
+</main>
+
+<section class="how">
+  <div class="wrap">
+    <span class="pill"><i>✦</i> Como funciona <i>✦</i></span>
+    <h2 style="margin-top:14px">Simples e sem disputa</h2>
+    <div class="steps">
+      <div class="step"><span class="k">1</span><div><b>Escolha e coloque no carrinho</b><p>Cada item é peça única. O que está na vitrine está disponível agora.</p></div></div>
+      <div class="step"><span class="k">2</span><div><b>Calcule o frete e finalize</b><p>Envio pelos Correios com desconto ou retirada em Vargem Grande. Ao finalizar, o item fica reservado pra você.</p></div></div>
+      <div class="step"><span class="k">3</span><div><b>Pague e pronto</b><p>Com o pagamento confirmado, eu separo e posto. Você recebe o código de rastreio no WhatsApp.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p><a href="https://www.instagram.com/_bazardacleide/" target="_blank" rel="noopener">Instagram @_bazardacleide</a> · <a id="waFooter" href="https://wa.me/5521967478819" target="_blank" rel="noopener">WhatsApp</a></p>
+    <p>Bazar da cake designer Cleide Fouz · Vargem Grande, Rio de Janeiro</p>
+  </div>
+</footer>
+
+<div class="dock" id="dock"><button class="btn dark" id="dockBtn">Ver carrinho</button></div>
+
+<div class="scrim" id="scrim"></div>
+
+<!-- produto -->
+<div class="sheet prod" id="prodSheet" role="dialog" aria-modal="true" aria-label="Produto">
+  <div class="grab"></div>
+  <div class="sh-head"><h3 class="serif">Detalhes</h3><button class="x" data-close aria-label="Fechar">×</button></div>
+  <div class="sh-body" id="prodBody"></div>
+</div>
+
+<!-- carrinho / finalizar -->
+<div class="sheet" id="cartSheet" role="dialog" aria-modal="true" aria-label="Carrinho">
+  <div class="grab"></div>
+  <div class="sh-head"><h3 id="cartTitle">Seu carrinho</h3><button class="x" data-close aria-label="Fechar">×</button></div>
+  <div class="sh-body" id="cartBody"></div>
+  <div class="sh-foot" id="cartFoot"></div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="app.js?v=2"></script>
+</body>
+</html>
