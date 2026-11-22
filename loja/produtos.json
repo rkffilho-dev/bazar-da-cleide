@@ -1,0 +1,179 @@
+{
+ "produtos": [
+  {
+   "id": "lote-1",
+   "nome": "Lote 1 de moldes de silicone",
+   "resumo": "+40 moldes de silicone",
+   "categoria": "Lotes de moldes",
+   "preco": 220,
+   "estoque": 1,
+   "descricao": "Vai a mesa inteira do jeito que está nas fotos: 40 moldes de silicone. Lote fechado, não vendo separado. Usados, em bom estado, higienizados.",
+   "fotos": [
+    "lote1-1.webp",
+    "lote1-2.webp",
+    "lote1-3.webp"
+   ],
+   "peso_kg": 2.5,
+   "destaque": true
+  },
+  {
+   "id": "lote-2",
+   "nome": "Lote 2 de moldes de silicone",
+   "resumo": "+40 moldes de silicone + kit de estecas",
+   "categoria": "Lotes de moldes",
+   "preco": 230,
+   "estoque": 1,
+   "descricao": "Vai a mesa inteira do jeito que está nas fotos: 40 moldes de silicone + kit de estecas. Lote fechado, não vendo separado. Usados, em bom estado, higienizados.",
+   "fotos": [
+    "lote2-1.webp",
+    "lote2-2.webp",
+    "lote2-3.webp",
+    "lote2-4.webp",
+    "lote2-5.webp"
+   ],
+   "peso_kg": 2.5,
+   "destaque": true
+  },
+  {
+   "id": "lote-3",
+   "nome": "Lote 3 de moldes de silicone",
+   "resumo": "+30 moldes de silicone + estecas",
+   "categoria": "Lotes de moldes",
+   "preco": 185,
+   "estoque": 1,
+   "descricao": "Vai a mesa inteira do jeito que está nas fotos: 30 moldes de silicone + estecas. Lote fechado, não vendo separado. Usados, em bom estado, higienizados.",
+   "fotos": [
+    "lote3-1.webp",
+    "lote3-2.webp",
+    "lote3-3.webp"
+   ],
+   "peso_kg": 2.5,
+   "destaque": true
+  },
+  {
+   "id": "lote-4",
+   "nome": "Lote 4 de moldes de silicone",
+   "resumo": "+35 moldes de silicone",
+   "categoria": "Lotes de moldes",
+   "preco": 210,
+   "estoque": 1,
+   "descricao": "Vai a mesa inteira do jeito que está nas fotos: 35 moldes de silicone. Lote fechado, não vendo separado. Usados, em bom estado, higienizados.",
+   "fotos": [
+    "lote4-1.webp",
+    "lote4-2.webp",
+    "lote4-3.webp",
+    "lote4-4.webp",
+    "lote4-5.webp"
+   ],
+   "peso_kg": 2.5,
+   "destaque": true
+  },
+  {
+   "id": "lote-5",
+   "nome": "Lote 5 de moldes de silicone",
+   "resumo": "+35 moldes + estecas + tapete de textura",
+   "categoria": "Lotes de moldes",
+   "preco": 199,
+   "estoque": 1,
+   "descricao": "Vai a mesa inteira do jeito que está nas fotos: 35 moldes + estecas + tapete de textura. Lote fechado, não vendo separado. Usados, em bom estado, higienizados.",
+   "fotos": [
+    "lote5-1.webp",
+    "lote5-2.webp",
+    "lote5-3.webp"
+   ],
+   "peso_kg": 2.5,
+   "destaque": true
+  },
+  {
+   "id": "lote-6",
+   "nome": "Lote 6 de moldes de silicone",
+   "resumo": "+30 moldes de silicone + 9 estecas",
+   "categoria": "Lotes de moldes",
+   "preco": 190,
+   "estoque": 1,
+   "descricao": "Vai a mesa inteira do jeito que está nas fotos: 30 moldes de silicone + 9 estecas. Lote fechado, não vendo separado. Usados, em bom estado, higienizados.",
+   "fotos": [
+    "lote6-1.webp",
+    "lote6-2.webp",
+    "lote6-3.webp"
+   ],
+   "peso_kg": 2.5,
+   "destaque": true
+  },
+  {
+   "id": "alfabeto-inox",
+   "nome": "Alfabeto colonial em inox",
+   "resumo": "26 letras + 9 números (35 cortadores)",
+   "categoria": "Cortadores",
+   "preco": 120,
+   "estoque": 1,
+   "descricao": "Kit de cortadores do alfabeto colonial em inox, não enferruja. São as 26 letras de A a Z e os números 1 a 8 e 0 (35 peças). Lindo para biscoito e topo de bolo.",
+   "fotos": [
+    "alfabeto-inox-1.webp",
+    "alfabeto-inox-2.webp",
+    "alfabeto-inox-3.webp",
+    "alfabeto-inox-4.webp",
+    "alfabeto-inox-5.webp",
+    "alfabeto-inox-6.webp"
+   ],
+   "peso_kg": 0.5,
+   "destaque": true
+  },
+  {
+   "id": "kit-cafe-5l",
+   "nome": "Kit café coado 5 litros",
+   "resumo": "Chaleira + suporte + coador",
+   "categoria": "Utensílios",
+   "preco": 150,
+   "estoque": 1,
+   "descricao": "O suporte segura o coador direto na chaleira: ideal pra fazer bastante café pra festa, igreja, evento ou trabalho. Usado, bom estado.",
+   "fotos": [
+    "cafe.webp"
+   ],
+   "peso_kg": 1.5,
+   "destaque": false
+  },
+  {
+   "id": "cortadores-letras-numeros",
+   "nome": "Cortadores de letras e números",
+   "resumo": "Kit completo para confeitaria e artesanato",
+   "categoria": "Cortadores",
+   "preco": 15,
+   "estoque": 1,
+   "descricao": "Kit de cortadores/marcadores de letras e números para confeitaria e artesanato.",
+   "fotos": [
+    "cortadores-letras-numeros.webp"
+   ],
+   "peso_kg": 0.2,
+   "destaque": false
+  },
+  {
+   "id": "alfabeto-tematico",
+   "nome": "Alfabeto de A a Z temático",
+   "resumo": "Cortadores de plástico com fonte temática",
+   "categoria": "Cortadores",
+   "preco": 10,
+   "estoque": 1,
+   "descricao": "Kit de cortadores de plástico do alfabeto (de A a Z) com fonte temática.",
+   "fotos": [
+    "alfabeto-tematico.webp"
+   ],
+   "peso_kg": 0.2,
+   "destaque": false
+  },
+  {
+   "id": "marcadores-textura",
+   "nome": "Marcador de textura",
+   "resumo": "Para pasta americana e biscuit · preço por unidade",
+   "categoria": "Texturas",
+   "preco": 7,
+   "estoque": 5,
+   "descricao": "Marcador de textura para pasta americana ou biscuit. Preço por unidade: escolha a quantidade no carrinho.",
+   "fotos": [
+    "marcadores-textura.webp"
+   ],
+   "peso_kg": 0.05,
+   "destaque": false
+  }
+ ]
+}

@@ -1,0 +1,3 @@
+loja/api/config.php
+loja/data/*.sqlite*
+loja/data/log.txt
