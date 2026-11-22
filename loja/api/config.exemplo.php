@@ -12,7 +12,7 @@ return [
   // 'infinitepay'  -> link de pagamento InfinitePay (Pix e cartão). Só precisa da InfiniteTag.
   // 'mercadopago'  -> Checkout Pro do Mercado Pago (Pix e cartão). Precisa do Access Token.
   // 'whatsapp'     -> sem pagamento no site: o pedido vai pro WhatsApp e a Cleide confirma no painel.
-  'pagamento' => 'whatsapp',
+  'pagamento' => 'infinitepay',
 
   // InfinitePay: sua InfiniteTag SEM o "$" (aparece no app InfinitePay)
   'infinitepay_handle' => '',
