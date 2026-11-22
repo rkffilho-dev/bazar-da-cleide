@@ -26,7 +26,7 @@ A pasta `loja/data` guarda os pedidos e é bloqueada para acesso externo. Faça 
 
 ## Token da SuperFrete
 
-web.superfrete.com > **Integrações > Nova integração** > API > **Gerar token**. É gratuito. Sem token, o site mostra um frete estimado por região.
+web.superfrete.com > **Integrações > Nova integração** > API > **Gerar token**. É gratuito. Sem o token o envio não é calculado (só aparece a retirada). O frete é o real da SuperFrete para o pacote do carrinho inteiro (soma peso e medidas dos itens).
 
 ## Produtos
 

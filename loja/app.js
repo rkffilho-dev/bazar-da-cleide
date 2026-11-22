@@ -196,8 +196,8 @@
 
   function freteHTML() {
     if (!frete || !frete.opcoes) return '';
-    return '<div class="opts">' + frete.opcoes.map(function (o) {
-      var sub = o.id === 'retirada' ? 'Ou ponto de encontro, combinado no WhatsApp' : (o.prazo ? 'Chega em até ' + o.prazo + ' dias úteis após a postagem' : (o.estimado ? 'Valor estimado' : ''));
+    return (frete.semEnvio ? '<p class="msg on">Não consegui calcular o envio para esse CEP agora. Tente de novo em instantes ou chame a Cleide no WhatsApp.</p>' : '') + '<div class="opts">' + frete.opcoes.map(function (o) {
+      var sub = o.id === 'retirada' ? 'Ou ponto de encontro, combinado no WhatsApp' : (o.prazo ? 'Chega em até ' + o.prazo + ' dias úteis após a postagem' : '');
       return '<label class="opt"><input type="radio" name="frete" value="' + esc(o.id) + '"' + (frete.escolhido === o.id ? ' checked' : '') + '><span class="nm">' + esc(o.nome) + (sub ? '<small>' + esc(sub) + '</small>' : '') + '</span><b>' + (o.preco ? brl(o.preco) : 'Grátis') + '</b></label>';
     }).join('') + '</div>';
   }
@@ -211,7 +211,8 @@
       : Promise.resolve({ opcoes: [{ id: 'demo', nome: 'Correios (PAC) · demonstração', preco: 29.9, prazo: 6 }, { id: 'retirada', nome: 'Retirar em Vargem Grande (RJ)', preco: 0 }] });
     req.then(function (j) {
       if (j.erro) { box.innerHTML = '<p class="msg on">' + esc(j.erro) + '</p>'; return; }
-      frete = { cep: cep, opcoes: j.opcoes, escolhido: j.opcoes[0] && j.opcoes[0].id };
+      var correios = j.opcoes.filter(function (o) { return o.id !== 'retirada'; }).length;
+      frete = { cep: cep, opcoes: j.opcoes, escolhido: j.opcoes[0] && j.opcoes[0].id, semEnvio: !correios };
       store.set('bz_frete', frete);
       renderCarrinho();
     }).catch(function () { box.innerHTML = '<p class="msg on">Não consegui calcular agora. Tente de novo.</p>'; });

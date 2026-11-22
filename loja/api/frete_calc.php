@@ -35,17 +35,7 @@ function cotar_frete(string $cep, array $itens): array {
       log_loja('superfrete erro ' . $r['code'] . ' ' . substr((string)$r['raw'], 0, 300));
     }
   }
-  if (!$opcoes) {
-    // Estimativa por região (sem token ou se a SuperFrete falhar). Ajuste à vontade.
-    $peso = array_sum(array_map(fn($x) => $x['weight'] * $x['quantity'], $lista));
-    $p2 = (int)substr($cep, 0, 2);
-    if ($p2 >= 20 && $p2 <= 28) $base = 22;        // RJ
-    elseif ($p2 <= 39) $base = 32;                  // SP, MG, ES
-    elseif ($p2 >= 80) $base = 40;                  // Sul
-    else $base = 55;                                // demais
-    $preco = round($base + max(0, $peso - 1) * 6 + $extra, 2);
-    $opcoes[] = ['id' => 'estimado', 'nome' => 'Correios (PAC)', 'preco' => $preco, 'prazo' => 0, 'estimado' => true];
-  }
+  // Sem estimativa: só entra frete real calculado pela SuperFrete para o pacote do carrinho.
   usort($opcoes, fn($a, $b) => $a['preco'] <=> $b['preco']);
   if (cfg('retirada_ativa')) $opcoes[] = ['id' => 'retirada', 'nome' => cfg('retirada_texto'), 'preco' => 0, 'prazo' => 0];
   return $opcoes;
