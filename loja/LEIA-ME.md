@@ -26,11 +26,11 @@ A pasta `loja/data` guarda os pedidos e é bloqueada para acesso externo. Faça 
 
 ## Token da SuperFrete
 
-web.superfrete.com > **Integrações > Nova integração** > API > **Gerar token**. É gratuito. Sem o token o envio não é calculado (só aparece a retirada). O frete é o real da SuperFrete para o pacote do carrinho inteiro (soma peso e medidas dos itens).
+web.superfrete.com > **Integrações > Nova integração** > API > **Gerar token**. É gratuito. Sem o token o envio não é calculado (só aparece a retirada). O pedido inteiro vai numa caixa só: o site soma o peso dos produtos, acrescenta a embalagem (config `embalagem_peso_kg` e `embalagem_margem`) e escolhe a caixa padrão por faixa de peso (função `caixa_do_pedido` em api/frete_calc.php). A SuperFrete devolve o preço real dessa caixa.
 
 ## Produtos
 
-Ficam em `produtos.json` (nome, preço, estoque, fotos, peso e medidas da caixa para o frete). Fotos em `img/`. Para tirar um item sem apagar, use o painel > Produtos > "Esconder da loja". Vendeu fora do site? Painel > Produtos > "Vendido fora do site".
+Ficam em `produtos.json` (nome, preço, estoque, fotos e `peso_kg` = peso do produto SEM embalagem). Fotos em `img/`. Para tirar um item sem apagar, use o painel > Produtos > "Esconder da loja". Vendeu fora do site? Painel > Produtos > "Vendido fora do site".
 
 Link direto para um produto (bom para anúncio): `https://SEU-DOMINIO/loja/?p=lote-1`
 

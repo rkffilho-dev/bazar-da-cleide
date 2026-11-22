@@ -13,10 +13,7 @@
     "lote1-2.webp",
     "lote1-3.webp"
    ],
-   "peso_kg": 3.0,
-   "altura_cm": 20,
-   "largura_cm": 30,
-   "comprimento_cm": 40,
+   "peso_kg": 2.5,
    "destaque": true
   },
   {
@@ -34,10 +31,7 @@
     "lote2-4.webp",
     "lote2-5.webp"
    ],
-   "peso_kg": 3.0,
-   "altura_cm": 20,
-   "largura_cm": 30,
-   "comprimento_cm": 40,
+   "peso_kg": 2.5,
    "destaque": true
   },
   {
@@ -53,10 +47,7 @@
     "lote3-2.webp",
     "lote3-3.webp"
    ],
-   "peso_kg": 3.0,
-   "altura_cm": 20,
-   "largura_cm": 30,
-   "comprimento_cm": 40,
+   "peso_kg": 2.5,
    "destaque": true
   },
   {
@@ -74,10 +65,7 @@
     "lote4-4.webp",
     "lote4-5.webp"
    ],
-   "peso_kg": 3.0,
-   "altura_cm": 20,
-   "largura_cm": 30,
-   "comprimento_cm": 40,
+   "peso_kg": 2.5,
    "destaque": true
   },
   {
@@ -93,10 +81,7 @@
     "lote5-2.webp",
     "lote5-3.webp"
    ],
-   "peso_kg": 3.0,
-   "altura_cm": 20,
-   "largura_cm": 30,
-   "comprimento_cm": 40,
+   "peso_kg": 2.5,
    "destaque": true
   },
   {
@@ -112,10 +97,7 @@
     "lote6-2.webp",
     "lote6-3.webp"
    ],
-   "peso_kg": 3.0,
-   "altura_cm": 20,
-   "largura_cm": 30,
-   "comprimento_cm": 40,
+   "peso_kg": 2.5,
    "destaque": true
   },
   {
@@ -134,10 +116,7 @@
     "alfabeto-inox-5.webp",
     "alfabeto-inox-6.webp"
    ],
-   "peso_kg": 0.6,
-   "altura_cm": 8,
-   "largura_cm": 20,
-   "comprimento_cm": 25,
+   "peso_kg": 0.5,
    "destaque": true
   },
   {
@@ -151,10 +130,7 @@
    "fotos": [
     "cafe.webp"
    ],
-   "peso_kg": 2.5,
-   "altura_cm": 35,
-   "largura_cm": 30,
-   "comprimento_cm": 35,
+   "peso_kg": 1.5,
    "destaque": false
   },
   {
@@ -168,10 +144,7 @@
    "fotos": [
     "cortadores-letras-numeros.webp"
    ],
-   "peso_kg": 0.3,
-   "altura_cm": 5,
-   "largura_cm": 15,
-   "comprimento_cm": 20,
+   "peso_kg": 0.2,
    "destaque": false
   },
   {
@@ -185,10 +158,7 @@
    "fotos": [
     "alfabeto-tematico.webp"
    ],
-   "peso_kg": 0.3,
-   "altura_cm": 5,
-   "largura_cm": 15,
-   "comprimento_cm": 20,
+   "peso_kg": 0.2,
    "destaque": false
   },
   {
@@ -202,10 +172,7 @@
    "fotos": [
     "marcadores-textura.webp"
    ],
-   "peso_kg": 0.1,
-   "altura_cm": 2,
-   "largura_cm": 12,
-   "comprimento_cm": 16,
+   "peso_kg": 0.05,
    "destaque": false
   }
  ]

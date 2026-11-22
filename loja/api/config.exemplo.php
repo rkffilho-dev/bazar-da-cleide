@@ -30,6 +30,8 @@ return [
   'superfrete_sandbox' => false,
   'superfrete_servicos' => '1,2,17',   // 1 = PAC, 2 = SEDEX, 17 = Mini Envios
   'cep_origem' => '22785000',          // CEP de onde a Cleide posta (Vargem Grande/RJ) — CONFIRMAR
+  'embalagem_peso_kg' => 0.3,          // peso da caixa + papel (kg), somado ao pedido
+  'embalagem_margem' => 1.10,          // +10% de folga no peso
   'frete_acrescimo' => 0,              // R$ a mais por pedido (embalagem), se quiser
   'retirada_ativa' => true,            // oferece "retirar / ponto de encontro" grátis
   'retirada_texto' => 'Retirar em Vargem Grande (RJ)',
